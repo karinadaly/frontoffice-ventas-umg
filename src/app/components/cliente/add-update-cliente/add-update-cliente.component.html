@@ -1,0 +1,20 @@
+<head>Cliente</head>
+<button [routerLink]="['/cliente']" class="btn btn-outline-primary">Regresar</button>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit) = "guardar()" #forma = "ngForm">
+      <div class="form-group">
+        <label for="txtDpi">DPI</label>
+        <input placeholder="DPI" name="txtDpi" [(ngModel)]="cliente.dpi" required class="form-control" id="txtDpi" type="text">
+        <label for="txtNit">NIT</label>
+        <input placeholder="NIT" name="txtNit" [(ngModel)]="cliente.nit" required class="form-control" id="txtNit" type="text">
+        <label for="txtNombre">NOMBRE</label>
+        <input placeholder="NOMBRE" name="txtNombre" [(ngModel)]="cliente.nombre" required class="form-control" id="txtNombre" type="text">
+      </div>
+      <div class="form-group">
+        <button [disabled]= "!forma.valid" type="submit" class="btn btn-outline-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

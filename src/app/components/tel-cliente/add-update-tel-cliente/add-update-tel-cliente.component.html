@@ -1,0 +1,21 @@
+<head>Telefono Cliente</head>
+<button [routerLink]="['/TelCliente']" class="btn btn-outline-primary">Regresar</button>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit) = "guardar()" #forma = "ngForm">
+      <div class="form-group">
+        <label for="txtDescripcion">DESCRIPCION</label>
+        <input placeholder="DESCRIPCION" name="txtDescripcion" [(ngModel)]="telCliente.descripcion" required class="form-control" id="txtDescripcion" type="text">
+        <label for="txtTelefono">TELEFONO</label>
+        <input placeholder="TELEFONO" name="txtTelefono" [(ngModel)]="telCliente.numeroTelefono" required class="form-control" id="txtTelefono" type="text">  
+      <div>
+        <label for= "txtCodigoCliente">CODIGO CLIENTE</label>
+     </div>>
+      </div>
+      <div class="form-group">
+        <button [disabled]= "!forma.valid" type="submit" class="btn btn-outline-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

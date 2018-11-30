@@ -1,0 +1,38 @@
+<head>Usuario</head>
+<button [routerLink]="['/usuario']" class="btn btn-outline-secondary zoom">Regresar</button>
+<hr>
+<div class="row">
+    <div class="col-md-12 color1">
+        <form (ngSubmit) = "guardar()" #forma = "ngForm">
+          <div class="form-group">
+            <label style=color:#FFFFFF; for="txtNombre">Nombre</label>
+            <input placeholder="Nombre"  name="txtNombre" [(ngModel)]="usuario.nombre" required class="form-control" id="txtNombre" type="text" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label  style=color:#FFFFFF for="txtEmail">Email</label>
+            <input placeholder="Email" name="txtEmail" [(ngModel)]="usuario.email" required class="form-control" id="txtEmail" type="email" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label style=color:#FFFFFF for="txtUsername">Username</label>
+            <input placeholder="Username" name="txtUsername" [(ngModel)]="usuario.username" required class="form-control" id="txtUsername" type="text" autocomplete="off">
+          </div> 
+          <div class="form-group">
+            <label style=color:#FFFFFF for="txtPassword">Password</label>
+            <input placeholder="Password" name="txtPassword" [(ngModel)]="usuario.password" required class="form-control" id="txtPassword" type="password" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label style=color:#FFFFFF for="txtCodigoRol">Rol</label>
+            <!-- <input placeholder="CodigoRol" name="txtCodigoRol" [(ngModel)]="usuario.codigoRol" required class="form-control" id="txtCodigoRol" type="number"> -->
+            <select [(ngModel)] = "usuario.rol.codigoRol" name="rol"  class="form-control" id="rol2" required >
+                <option [value] = "rol.codigoRol"  *ngFor = "let rol of roles">{{ rol.nombre }}</option>
+              </select>
+          </div>  
+          <div class="form-group">
+            <button [disabled]= "!forma.valid" type="submit" class="btn btn-outline-warning zoom">Guardar</button>
+          </div>
+    </form>
+  </div>
+</div>
+
+
+  

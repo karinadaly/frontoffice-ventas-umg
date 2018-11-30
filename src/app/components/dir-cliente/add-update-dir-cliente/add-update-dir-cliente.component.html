@@ -1,0 +1,18 @@
+<head>Direccion Cliente</head>
+<button [routerLink]="['/DirCliente']" class="btn btn-outline-primary">Regresar</button>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit) = "guardar()" #forma = "ngForm">
+      <div class="form-group">
+        <label for="txtDescripcion">DESCRIPCION</label>
+        <input placeholder="DESCRIPCION" name="txtDescripcion" [(ngModel)]="dirCliente.descripcion" required class="form-control" id="txtDescripcion" type="text">
+        <label for="txtDireccion">DIRECCION</label>
+        <input placeholder="DIRECCION" name="txtDireccion" [(ngModel)]="dirCliente.direccion" required class="form-control" id="txtDireccion" type="text">
+      </div>
+      <div class="form-group">
+        <button [disabled]= "!forma.valid" type="submit" class="btn btn-outline-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<app-loading *ngIf="loading"></app-loading>
+<h1 class="text-center color1">Compras</h1>
+<hr style="border-color:white;">
+<div class="container m-5 animated fadeIn">
+  <button [routerLink]="['/compra-add']" class="btn btn-outline-secondary zoom w120">Agregar</button>
+  <br><br>
+  <table class="table color1 text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">#DOC</th>
+        <th scope="col">FECHA</th>
+        <th scope="col">TOTAL</th>
+        <th scope="col">PROVEEDOR</th>
+        <th scope="col">OPCIONES</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let compra of compras; let i = index">
+      <tr>
+        <td scope="row">{{ i + 1 }}</td>
+        <td>{{ compra.numeroDocumento }}</td>
+        <td>{{ compra.fecha }}</td>
+        <td>{{ compra.totalCompra }}</td>
+        <td>{{ compra.proveedor.razonSocial }}</td>
+        <td>
+          <button (click)="eliminar(i)" class="btn btn-danger w120">Borrar</button>
+          <button [routerLink]="['/compra-update', compra.numeroDocumento]" class="btn btn-success w120">Editar</button>
+          <button [routerLink]="['/detalle-compra']" class="btn btn-outline-info w120">Detalles</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,28 @@
+<app-loading *ngIf="loading"></app-loading>
+<h1 class="text-center color1">Categoria</h1>
+<hr style="border-color:white;">
+<div class="container m-5 animated fadeIn">
+    <button [routerLink]="['/categoria-add']" class="btn btn-outline-secondary w120 zoom">Agregar</button>
+    <br><br>
+    <table class="table color1 text-center">
+        <thead class="thead-dark">
+            <tr class="text-center color1">
+                <th scope="col">#</th>
+                <th scope="col">CODIGO</th>
+                <th scope="col">DESCRIPCION</th>
+                <th scope="col">OPCIONES</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let categoria of categorias; let i = index">
+            <tr>
+                <th scope="row">{{ i + 1}}</th>
+                <td>{{ categoria.codigoCategoria}}</td>
+                <td>{{ categoria.descripcion}}</td>
+                <td>
+                    <button (click)="eliminar(i)" class="btn btn-danger w120">Eliminar</button>
+                    <button [routerLink]="['/categoria-update',categoria.codigoCategoria]" class="btn btn-success w120">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

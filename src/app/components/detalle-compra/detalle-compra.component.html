@@ -1,0 +1,33 @@
+<app-loading *ngIf="loading"></app-loading>
+<h1 class="text-center color1">Detalle Compra</h1>
+<hr style="border-color:white;">
+<div class="container m-5 animated fadeIn">
+  <button [routerLink]="['/detalle-compra-add']" class="btn btn-outline-secondary zoom w120">Agregar</button>
+  <br><br>
+  <table class="table color1 text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">CODIGO</th>
+        <th scope="col">CANTIDAD</th>
+        <th scope="col">PRECIO</th>
+        <th scope="col">SUBTOTAL</th>
+        <th scope="col">PRODUCTO</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let detalleCompra of detalleCompras; let i = index">
+      <tr>
+        <th scope="row">{{ i + 1}}</th>
+        <td>{{ detalleCompra.codigoDetalleCompra }}</td>
+        <td>{{ detalleCompra.cantidad }}</td>
+        <td>{{ detalleCompra.precio }}</td>
+        <td>{{ detalleCompra.subtotal }}</td>
+        <td>{{ detalleCompra.producto.descripcion }}</td>
+        <td>
+          <button (click)="eliminar(i)" class="btn btn-danger w120">Delete</button>
+          <button [routerLink]="['/detalle-compra-update',detalleCompra.codigoDetalleCompra]" class="btn btn-success w120">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

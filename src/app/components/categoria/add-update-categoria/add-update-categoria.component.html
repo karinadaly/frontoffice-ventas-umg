@@ -1,0 +1,16 @@
+<head>Categoria</head>
+<button [routerLink]="['/categoria']" class="btn btn-outline-secondary zoom">Regresar</button>
+<hr>
+<div class="row color1">
+    <div class="col-md-12">
+        <form (ngSubmit)="guardar()" #forma="ngForm">
+            <div class="form-group has-danger">
+                <label style=color:#FFFFFF for="txtDescripcion">Descripción</label>
+                <input placeholder="Descripción" name="txtDescripcion" [(ngModel)]="categoria.descripcion" required class="form-control" id="txtDescripcion" type="text" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-outline-warning zoom" [disabled]="!forma.valid" type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

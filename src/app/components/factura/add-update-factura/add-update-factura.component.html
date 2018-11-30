@@ -1,0 +1,29 @@
+<head>Factura</head>
+<button [routerLink]="['/factura']" class="btn btn-outline-secondary zoom">Regresar</button>
+<hr>
+<div class="row color1">
+    <div class="col-md-12">
+        <form (ngSubmit)="guardar()" #forma="ngForm">
+            <div class="form-group">
+                <label for="txtNumeroFactura">Numero Factura</label>
+                <input placeholder="Numero Factura" name="txtNumeroFactura" [(ngModel)]="factura.numeroFactura" required class="form-control" id="txtNumeroFactura" type="text">
+            </div>
+            <div class="form-group">
+                <label for="txtSerie">Serie</label>
+                <input placeholder="Serie" name="txtSerie" [(ngModel)]="factura.serie" required class="form-control" id="txtSerie" type="text">
+            </div>
+            <div class="form-group">
+                <label for="txtFecha">Fecha</label>
+                <input placeholder="Fecha Factura" name="txtFecha" [(ngModel)]="factura.fechaFactura" required class="form-control" id="txtFecha" type="date">
+            </div>
+            <div class="form-group">
+                <label for="txtMontoTotal">Monto Total</label>
+                <input placeholder="Monto Total" name="txtMontoTotal" [(ngModel)]="factura.total" required class="form-control" id="txtMontoTotal" type="text">
+            </div>
+            <br><br>
+            <div class="form-group">
+                <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-warning zoom">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<head>Direccion Proveedor</head>
+<button [routerLink]="['/dirprov']" class="btn btn-outline-secondary zoom">Regresar</button>
+<hr>
+<div class="row color1">
+    <div class="col-md-12">
+        <form (ngSubmit)="guardar()" #forma="ngForm">
+            <div class="form-group">
+                <label for="txtDireccion">Direccion</label>
+                <input placeholder="Direccion" name="txtDireccion" [(ngModel)]="direccionProveedor.direccion" required class="form-control" id="txtDireccion" type="text">
+                <label for="txtDescripcion">Descripcion</label>
+                <input placeholder="Descripcion" name="txtDescripcion" [(ngModel)]="direccionProveedor.descripcion" required class="form-control" id="txtDescripcion" type="text">
+                <div class="form-group">
+                    <label for="cmbProveedor">Proveedor:</label>
+                    <select [(ngModel)]="direccionProveedor.proveedor.contactoPrincipal" name="cmbProveedor" class="form-control" id="cmbProveedor" required>
+                        <option [value] = "proveedor.contactoPrincipal" *ngFor = "let proveedor of proveedores">{{ proveedor.contactoPrincipal }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-warning zoom">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

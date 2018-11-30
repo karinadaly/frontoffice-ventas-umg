@@ -1,0 +1,27 @@
+<div class="container animated fadeIn">
+    <h1 class="text-center TypeLetter">Bienvenido</h1>
+    <hr>
+    <div class="slider">
+        <ul>
+            <li><img src="https://firebasestorage.googleapis.com/v0/b/tienda-de-ropa-83583.appspot.com/o/Collection.jpeg?alt=media&token=8ae0203a-4c2f-4362-8a4b-d31452082084"
+                    alt="Responsive image"></li>
+            <li><img src="https://firebasestorage.googleapis.com/v0/b/tienda-de-ropa-83583.appspot.com/o/Ropa_2.jpg?alt=media&token=bb34d996-1148-4fcd-8472-3d2fb0f69bc9"
+                    alt="Responsive image"></li>
+            <li><img src="https://i.pinimg.com/originals/03/e3/d0/03e3d00c4b9a4611fb35a76a67428ab5.jpg" alt="Responsive image"></li>
+        </ul>
+    </div>
+    <h2 class="text-center TypeH2">¿A dónde deseas ir?</h2>
+    <hr style="border-color:white;">
+    <div class="text-center">
+        <button type="button" class="btn btn-outline-secondary zoom" [routerLink]="['/categoria']">Categoria</button>
+        <button type="button" class="btn btn-outline-secondary zoom">Productos</button>
+        <button type="button" class="btn btn-outline-secondary zoom" [routerLink]="['/tipo-empaque']">Tipo Empaque</button>
+        <button type="button" class="btn btn-outline-secondary zoom" [routerLink]="['/tipo-registro']">Tipo Registro</button>
+        <button type="button" class="btn btn-outline-secondary zoom">Proveedores</button>
+        <button type="button" [routerLink]="['/compra']" class="btn btn-outline-secondary zoom">Compras</button>
+        <button type="button" class="btn btn-outline-secondary zoom">Clientes</button>
+        <button type="button" class="btn btn-outline-secondary zoom" [routerLink]="['/factura']">Facturas</button>
+        <button type="button" class="btn btn-outline-secondary zoom" [routerLink]="['/usuario']">Usuarios</button>
+        <button type="button" class="btn btn-outline-secondary zoom" [routerLink]="['/rol']">Roles</button>
+    </div>
+</div>

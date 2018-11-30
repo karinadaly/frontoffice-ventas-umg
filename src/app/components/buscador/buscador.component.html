@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col">
+        <input #termino (keyup)="buscar(termino.value)" type="text" class="form-control" placeholder="Buscar producto...">
+    </div>
+</div>
+<hr style="border-color:white;">    
+<div class="row">
+  <div class="card-columns m-5 animated fadeIn">
+      <div *ngFor="let producto of productos" class="card puntero">
+          <img class="card-img-top" src="assets/img/{{producto.imagen}}" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">{{ producto.descripcion | uppercase }}</h5>
+              <p class="card-text badge badge-pill badge-primary">                  
+                  {{ producto.precioUnitario | currency }}                  
+              </p>
+          </div>
+      </div>  
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="container m-5 animated fadeIn">
+<button [routerLink]="['/DirCliente-add']" class="btn btn-outline-primary w120">Agregar</button>
+<br><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CODIGO DIRECCION</th>
+      <th scope="col">DESCRIPCION</th>
+      <th scope="col">DIRECCION</th>
+      <th scope="col">CODIGO CLIENTE</th>
+      <th scope="col">OPCIONES</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let dirCliente of dirClientes; let i = index">
+    <tr>
+      <th scope="row">{{ i + 1}}</th>
+      <td>{{ dirCliente.codigoDireccion}}</td>
+      <td>{{ dirCliente.descripcion}}</td>
+      <th>{{ dirCliente.direccion}}</th>
+      <th>{{ dirCliente.cliente.codigoCliente}}</th>
+      <td> 
+        <button (click) = "eliminar(i)" class="btn btn-danger w120">Delete</button> 
+        <button [routerLink]="['/dirCliente-update',dirCliente.codigoDireccion]" class="btn btn-success w120">Editar</button>
+      </td>      
+    </tr>
+  </tbody>
+</table>
+</div>

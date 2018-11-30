@@ -1,0 +1,19 @@
+<head>Tipo Registro</head>
+<button [routerLink]="['/tipo-registro']" class="btn btn-outline-secondary zoom">Regresar</button>
+<hr>
+<div class="row color1">
+  <div class="col-md-12">
+    <form (ngSubmit) = "guardar()" #forma = "ngForm">
+      <div class="form-group">
+        <label for="cmbDescripcion:"> Descripcion:</label> 
+        <select  [ngModelOptions]="{standalone: true}" [(ngModel)] = "tipoRegistro.descripcion" class="form-control" id="cmbDescripcion" required class="form-control" type="text">
+            <option> activo</option>
+            <option> pasivo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button [disabled]= "!forma.valid" type="submit" class="btn btn-outline-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

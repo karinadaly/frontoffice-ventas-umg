@@ -1,0 +1,18 @@
+<head>Compra</head>
+<button [routerLink]="['/compra']" class="btn btn-outline-secondary zoom">Regresar</button>
+<hr>
+<div class="row color1">
+  <div class="col-md-12">
+    <form (ngSubmit)="guardar()" #forma="ngForm">
+      <div class="form-group">
+        <label for="txtNombreUsuario">Nombre usuario</label>
+        <input placeholder="Nombre de usuario" name="txtNombreUsuario" [(ngModel)]="compra.nombreUsuario" required class="form-control" id="txtNombreUsuario" type="text">
+        <label for="dtpFecha">Fecha</label>
+        <input pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" name="dtpFecha" [(ngModel)]="compra.fecha" required class="form-control" id="dtpFecha" type="date">
+      </div>
+      <div>
+        <button [disabled]="!forma.valid" type="submit" class="btn btn-outline-warning zoom">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>

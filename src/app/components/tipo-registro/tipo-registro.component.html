@@ -1,0 +1,28 @@
+<app-loading *ngIf="loading"></app-loading>
+<h1 class="text-center color1">Tipo de registro</h1>
+<hr style="border-color:white;">
+<div class="container m-5 animated fadeIn">
+<button [routerLink]="['/tipo-registro-add']" class="btn btn-outline-secondary zoom w120">Agregar</button>
+<br><br>
+<table class="table color1 text-center">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CODIGO</th>
+      <th scope="col">DESCRIPCION</th>
+      <th scope="col">OPCIONES</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let tipoRegistro of tipoRegistros; let i = index">
+    <tr>
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ tipoRegistro.codigoTipoRegistro }}</td>
+      <td>{{ tipoRegistro.descripcion }}</td>
+      <td> 
+        <button (click) = "eliminar(i)" class="btn btn-danger w120">Delete</button> 
+        <button [routerLink]="['/tipo-registro-update',tipoRegistro.codigoTipoRegistro]" class="btn btn-success w120">Editar</button>
+      </td>      
+    </tr>
+  </tbody>
+</table>
+</div>

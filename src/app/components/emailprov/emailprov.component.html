@@ -1,0 +1,32 @@
+<app-loading *ngIf="loading"></app-loading>
+<h1 class="text-center color1">Email Proveedor</h1>
+<hr style="border-color:white;">
+<div class="container m-5 animated fadeIn">
+    <button [routerLink]="['/emailprov-add']" class="btn btn-outline-secondary zoom w120">Agregar</button>
+    <br><br>
+    <table class="table color1 text-center">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">CODIGO</th>
+                <th scope="col">DESCRIPCION</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">PROVEEDOR</th>
+                <th scope="col">OPCIONES</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let emailProveedor of emailProveedores; let i = index">
+            <tr>
+                <th scope="row">{{ i + 1}}</th>
+                <td>{{ emailProveedor.codigoDireccion}}</td>
+                <td>{{ emailProveedor.descripcion}}</td>
+                <td>{{ emailProveedor.email}}</td>
+                <td>{{ emailProveedor.proveedor.contactoPrincipal}}</td>
+                <td>
+                    <button (click)="eliminar(i)" class="btn btn-danger w120">Delete</button>
+                    <button [routerLink]="['/emailprov-update', emailProveedor.codigoEmail]" class="btn btn-success w120">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

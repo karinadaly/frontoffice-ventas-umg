@@ -1,0 +1,30 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="container m-5 animated fadeIn">
+<button [routerLink]="['/emailCliente-add']" class="btn btn-outline-primary w120">Agregar</button>
+<br><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CODIGO EMAIL</th>
+      <th scope="col">DESCRIPCION</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">CODIGO CLIENTE</th>
+      <th scope="col">OPCIONES</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let emailCliente of emailClientes; let i = index">
+    <tr>
+      <th scope="row">{{ i + 1}}</th>
+      <td>{{ emailCliente.codigoEmail}}</td>
+      <td>{{ emailCliente.description}}</td>
+      <th>{{ emailCliente.email}}</th>
+      <th>{{ emailCliente.cliente.codigoCliente}}</th>
+      <td> 
+        <button (click) = "eliminar(i)" class="btn btn-danger w120">Delete</button> 
+        <button [routerLink]="['/emailCliente-update', emailCliente.codigoEmail]" class="btn btn-success w120">Editar</button>
+      </td>     
+    </tr>
+  </tbody>
+</table>
+</div>
